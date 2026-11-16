@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚡ Shocknomics — Economia, geopolitica, mercati e sport</title>
+<meta name="description" content="Shocknomics: analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia e sport. Edizione novembre 2026 — 10 report PDF in download gratuito.">
+<meta property="og:title" content="⚡ Shocknomics — Economia, geopolitica, mercati e sport">
+<meta property="og:description" content="Analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia e sport. PDF scaricabili gratuitamente. Edizione: Novembre 2026.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.jpg">
+<link rel="icon" href="assets/logo.jpg">
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1a2332; --muted:#5b6b7e;
+    --accent:#2456a6; --accent2:#1d3d75; --line:#e3e7ee;
+    --energia:#d35400; --metalli:#0e8a7d; --azionario:#2456a6; --sport:#1e8e4d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans Devanagari","Noto Sans SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  a{color:var(--accent)}
+
+  /* ---------- header ---------- */
+  header{background:linear-gradient(135deg,#1d3d75 0%,#2456a6 60%,#3f7bd9 100%);color:#fff;padding:34px 20px 40px;text-align:center}
+  .langs{display:flex;gap:6px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+  .lang{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;padding:6px 16px;font-size:.85rem;font-weight:700;cursor:pointer}
+  .lang.active{background:#fff;color:var(--accent2)}
+  .brand{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+  .logo{width:76px;height:76px;border-radius:50%;border:3px solid rgba(255,255,255,.9);box-shadow:0 4px 16px rgba(0,0,0,.35);background:#12122b}
+  header h1{font-size:clamp(1.7rem,4vw,2.6rem);letter-spacing:-.5px}
+  header p.sub{max-width:780px;margin:12px auto 0;opacity:.92;font-size:1.02rem}
+  .edition{display:inline-block;margin-top:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 18px;font-size:.8rem;font-weight:700;letter-spacing:2px}
+  .tg-cta{display:inline-flex;align-items:center;gap:10px;margin-top:20px;background:#229ed9;color:#fff;font-weight:700;font-size:.95rem;padding:11px 22px;border-radius:999px;text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,.25);transition:filter .15s;flex-wrap:wrap;justify-content:center}
+  .tg-cta:hover{filter:brightness(1.1)}
+  .tg-cta small{font-size:.75rem;font-weight:500;opacity:.9}
+  .stats{display:flex;gap:26px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+  .stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:10px 22px}
+  .stat b{display:block;font-size:1.35rem}
+  .stat span{font-size:.8rem;opacity:.85;text-transform:uppercase;letter-spacing:.5px}
+  .shareall{margin-top:20px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .shareall .slabel{opacity:.85;align-self:center;font-size:.85rem;margin-right:2px}
+
+  /* ---------- controls ---------- */
+  .controls{max-width:1100px;margin:-22px auto 8px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:7px 16px;font-size:.86rem;cursor:pointer;font-weight:600}
+  .chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .searchbox{flex:1;min-width:220px;max-width:340px;margin-left:auto}
+  .searchbox input{width:100%;padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:.9rem;background:#fff}
+  .searchbox input:focus{outline:2px solid var(--accent);outline-offset:1px}
+
+  /* ---------- grid & cards ---------- */
+  main{max-width:1100px;margin:24px auto 40px;padding:0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 16px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 3px rgba(20,35,60,.05)}
+  .card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .badge{font-size:.72rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#fff;padding:3px 10px;border-radius:999px}
+  .badge.energia{background:var(--energia)} .badge.metalli{background:var(--metalli)}
+  .badge.azionario{background:var(--azionario)} .badge.sport{background:var(--sport)}
+  .date{font-size:.8rem;color:var(--muted);font-weight:600}
+  .card h3{font-size:1.12rem;line-height:1.35;letter-spacing:-.2px}
+  .summary{font-size:.92rem;color:#3d4a5c;flex:1}
+  .meta{font-size:.8rem;color:var(--muted)}
+  .actions{display:flex;gap:8px}
+  .btn-dl{flex:1;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;padding:10px 12px;border-radius:10px;transition:background .15s}
+  .btn-dl:hover{background:var(--accent2)}
+  .btn-view{text-align:center;border:1px solid var(--line);color:var(--accent);text-decoration:none;font-weight:600;font-size:.88rem;padding:10px 14px;border-radius:10px}
+  .btn-view:hover{border-color:var(--accent);background:#f0f5ff}
+  .share{display:flex;gap:6px;flex-wrap:wrap;align-items:center;border-top:1px dashed var(--line);padding-top:10px;margin-top:2px}
+  .share .lbl{font-size:.78rem;color:var(--muted);margin-right:2px}
+  .sbtn{font-size:.78rem;font-weight:600;border-radius:999px;padding:4px 10px;text-decoration:none;color:#fff;border:none;cursor:pointer}
+  .sbtn.wa{background:#25d366}.sbtn.tg{background:#229ed9}.sbtn.x{background:#111}
+  .sbtn.li{background:#0a66c2}.sbtn.fb{background:#1877f2}.sbtn.em{background:#6b7280}.sbtn.cp{background:#8892a0}
+  .sbtn:hover{filter:brightness(1.12)}
+  .noresult{display:none;text-align:center;color:var(--muted);padding:40px 0}
+
+  /* ---------- footer ---------- */
+  footer{background:#132340;color:#c6d2e6;padding:30px 20px;text-align:center;font-size:.85rem}
+  footer b{color:#fff}
+  footer a{color:#7ec3f0;font-weight:600}
+  footer .fine{max-width:820px;margin:8px auto 0;opacity:.75;font-size:.78rem}
+  @media(max-width:520px){.stats{gap:12px}.stat{padding:8px 14px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="langs" role="group" aria-label="Lingua / Language / 语言 / भाषा">
+    <button class="lang active" data-lang="it">IT</button>
+    <button class="lang" data-lang="en">EN</button>
+    <button class="lang" data-lang="zh">中文</button>
+    <button class="lang" data-lang="hi">हिन्दी</button>
+  </div>
+  <div class="brand">
+    <img class="logo" src="assets/logo.jpg" alt="Logo Shocknomics">
+    <h1>⚡ Shocknomics</h1>
+  </div>
+  <p class="sub" id="h-sub">Analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia, sport e mercati — costruite su dati pubblici. Ogni mese una nuova edizione: i PDF sono <b>sempre scaricabili gratuitamente</b>.</p>
+  <div class="edition" id="h-edition">EDIZIONE 0 · NOVEMBRE 2026</div>
+  <div><a class="tg-cta" href="https://t.me/shocknomics" target="_blank" rel="noopener">
+    <span id="h-tglabel">📢 Canale Telegram ufficiale</span> <small id="h-tgsmall">@shocknomics · «Pillole dal mondo»</small>
+  </a></div>
+  <div class="stats">
+    <div class="stat"><b>10</b><span id="st-reports">Report</span></div>
+    <div class="stat"><b>98</b><span id="st-pages">Pagine</span></div>
+    <div class="stat"><b>~5 MB</b><span id="st-arch">Archivio</span></div>
+    <div class="stat"><b>0 €</b><span id="st-free">Per sempre</span></div>
+  </div>
+  <div class="shareall">
+    <span class="slabel" id="h-sharesite">Condividi Shocknomics:</span>
+    <button class="sbtn wa" data-share="wa">WhatsApp</button>
+    <button class="sbtn tg" data-share="tg">Telegram</button>
+    <button class="sbtn x"  data-share="x">X</button>
+    <button class="sbtn li" data-share="li">LinkedIn</button>
+    <button class="sbtn fb" data-share="fb">Facebook</button>
+    <button class="sbtn cp" data-share="cp" id="h-copy">🔗 Copia link</button>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="chips">
+    <button class="chip active" data-cat="all" id="chip-all">Tutti</button>
+    <button class="chip" data-cat="energia" id="chip-energia">⚡ Energia</button>
+    <button class="chip" data-cat="metalli" id="chip-metalli">⛏ Metalli &amp; materie prime</button>
+    <button class="chip" data-cat="azionario" id="chip-azionario">📈 Azionario &amp; Tech</button>
+    <button class="chip" data-cat="sport" id="chip-sport">⚽ Sport analytics</button>
+  </div>
+  <div class="searchbox"><input id="q" type="search" placeholder="Cerca nei report…" aria-label="Cerca"></div>
+</div>
+
+<main>
+  <div class="grid" id="grid">
+
+    <article class="card" id="nvda-fair-value" data-cat="azionario" data-date="2026-11-16" data-pages="5" data-size="18 KB">
+      <div class="card-top"><span class="badge azionario js-cat" data-cat="azionario">Azionario &amp; Tech</span><span class="date js-date"></span></div>
+      <h3 class="js-title">NVIDIA (NVDA): prospettive di vendita e fair value a 12 mesi</h3>
+      <p class="summary js-summary">Ricavi guidati a 108 mld $ nel Q3 FY27 (+66% a/a) con margine lordo ~74% e nessun ricavo compute
+      dalla Cina. Backlog Blackwell + Rubin da ~1.000 mld $ fino a fine 2027. Il titolo, dopo le dimissioni del CEO
+      Jensen Huang (12 nov.) e le paure di bolla AI, tratta a ~217 $ con P/E ~23x su FY27 e ~14x su FY28; consensus
+      298-330 $. Basata su dati indipendenti e pubblici; non è consulenza finanziaria.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-16_nvda-fair-value.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-16_nvda-fair-value.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="nvda-switch-ai-2030" data-cat="azionario" data-date="2026-11-16" data-pages="7" data-size="127 KB">
+      <div class="card-top"><span class="badge azionario js-cat" data-cat="azionario">Azionario &amp; Tech</span><span class="date js-date"></span></div>
+      <h3 class="js-title">NVIDIA: valutazione, ciclo tecnologico e possibile switch del valore AI</h3>
+      <p class="summary js-summary">La tesi in una frase: NVIDIA può continuare a crescere anche mentre il suo peso relativo
+      nell'ecosistema AI si riduce. Il punto di svolta non è il crollo del business chip, ma il momento in cui modelli
+      e applicazioni trattengono una quota crescente del valore economico dell'AI. Scenari FY28-FY31 con tempi
+      di maturazione compressi a metà rispetto ai cicli Intel e Cisco. Analisi di scenario personale.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-16_nvda-valutazione-switch-ai-2030.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-16_nvda-valutazione-switch-ai-2030.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="superciclo-materie-prime" data-cat="metalli" data-date="2026-11-16" data-pages="17" data-size="304 KB">
+      <div class="card-top"><span class="badge metalli js-cat" data-cat="metalli">Metalli &amp; materie prime</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Il possibile nuovo superciclo delle materie prime 2026-2032</h3>
+      <p class="summary js-summary">Confronto con il ciclo 2000-2008/09: elettrificazione, rame e sicurezza energetica come motori
+      di un possibile nuovo ciclo selettivo. Analizza i segnali già visibili nel 2026, i tre scenari per il periodo,
+      gli indicatori da monitorare per capire se il superciclo è reale e i fattori che potrebbero interromperlo.
+      Fonti: Banca Mondiale e International Energy Agency.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-16_superciclo-materie-prime.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-16_superciclo-materie-prime.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="shale-usa-venezuela" data-cat="energia" data-date="2026-11-16" data-pages="16" data-size="682 KB">
+      <div class="card-top"><span class="badge energia js-cat" data-cat="energia">Energia</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Shale USA e il fattore Venezuela — verifica dati EIA</h3>
+      <p class="summary js-summary">Fact-checking sugli archivi EIA (WPSR, PSM, STEO di novembre 2026): la produzione statunitense
+      di greggio è ai massimi storici, non in declino; lo shale rallenta per bacino, non crolla. Stime dei pozzi
+      venezuelani e possibile effetto dei barili venezuelani sulla raffinazione del Golfo, con appendice su fonti
+      e metodologia.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-16_shale-usa-venezuela-eia.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-16_shale-usa-venezuela-eia.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="prevedibilita-previsioni-costi" data-cat="metalli" data-date="2026-11-15" data-pages="7" data-size="560 KB">
+      <div class="card-top"><span class="badge metalli js-cat" data-cat="metalli">Metalli &amp; materie prime</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Quanto sono affidabili le previsioni? E i costi spiegano i prezzi?</h3>
+      <p class="summary js-summary">Verifica storica su 180 coppie previsione-realizzazione (25 edizioni del Commodity Markets
+      Outlook 2006-2026): le previsioni in corsa d'anno indovinano la direzione nell'80% dei casi, quelle a 12-18 mesi
+      scendono al 52% (puro caso). I costi di produzione correlano quasi perfettamente con i prezzi ma li seguono,
+      non li precedono. Parte 3 della ricerca sui metalli.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-15_prevedibilita-previsioni-costi.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-15_prevedibilita-previsioni-costi.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="fondamentali-metalli-2027" data-cat="metalli" data-date="2026-11-15" data-pages="7" data-size="372 KB">
+      <div class="card-top"><span class="badge metalli js-cat" data-cat="metalli">Metalli &amp; materie prime</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Fondamentali dei mercati dei metalli — base per la previsione 2027</h3>
+      <p class="summary js-summary">Bilanci fisici di produzione, utilizzo e scorte da ICSG, INSG e ILZSG (Lisbona, ottobre 2026):
+      nel 2027 l'offerta riprende ovunque mentre la domanda cresce a ritmo moderato. Surplus previsti per rame (+368 kt),
+      piombo, nichel e zinco; deficit dell'argento ridimensionato e copertura mineraria dell'uranio ancora insufficiente.
+      La Banca Mondiale prevede i metalli industriali -3,3% nel 2027.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-15_fondamentali-metalli-2027.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-15_fondamentali-metalli-2027.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="mercati-metalli-scenari" data-cat="metalli" data-date="2026-11-15" data-pages="7" data-size="517 KB">
+      <div class="card-top"><span class="badge metalli js-cat" data-cat="metalli">Metalli &amp; materie prime</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Mercati dei metalli: quadro attuale e scenari a 12 mesi per le azioni</h3>
+      <p class="summary js-summary">Ottobre 2026 segnala forte divergenza: il rame ha toccato 14.508 $/t (record assoluto),
+      stagno e zinco sui massimi, mentre il minerale di ferro resta debole e i preziosi correggono (argento da 92 a 57 $/oz,
+      oro -14% dal picco). Le azioni del settore hanno corretto più dei metalli: il divario tra prezzi e titoli è il tema
+      centrale per gli scenari a 12 mesi. Parte 1 della ricerca sui metalli.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-15_mercati-metalli-scenari.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-15_mercati-metalli-scenari.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="analisi-allenatori-serie-a" data-cat="sport" data-date="2026-11-14" data-pages="24" data-size="1,1 MB">
+      <div class="card-top"><span class="badge sport js-cat" data-cat="sport">Sport analytics</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Analisi prestazioni allenatori — Serie A (Coach Analytics)</h3>
+      <p class="summary js-summary">Indice composito &laquo;value-adjusted&raquo; per valutare stagioni e carriere degli allenatori di Serie A:
+      punti, xG, spettacolo e dominio offensivo/difensivo rapportati al valore della rosa. 870 partite analizzate
+      (agosto 2023 - novembre 2026) su dati FotMob e Transfermarkt, classifiche per stagione e di carriera,
+      il &laquo;caso Zanetti&raquo; e verifica completa della qualità dei dati.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-14_analisi-allenatori-serie-a.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-14_analisi-allenatori-serie-a.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="chi-beneficia-crack-spread" data-cat="energia" data-date="2026-11-14" data-pages="7" data-size="435 KB">
+      <div class="card-top"><span class="badge energia js-cat" data-cat="energia">Energia</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Oil Radar — Chi beneficia del crack spread e di quanto</h3>
+      <p class="summary js-summary">Con il crack 3-2-1 Gulf previsto in normalizzazione a ~48 $/bbl di media 2027, nessuna grande
+      raffineria USA mostra ulteriore crescita degli utili: il picco è stato raggiunto nel 2026. Beneficiari residui:
+      chi ha base depressa (Delek, Par Pacific) o guadagnerebbe nell'ottimismo (MPC +22%, PSX +19%, VLO +15%).
+      Sul piano azionario il rischio è asimmetrico al ribasso. Companion del rapporto sulla previsione del crack.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-14_chi-beneficia-crack-spread.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-14_chi-beneficia-crack-spread.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="previsione-crack-spread-usa" data-cat="energia" data-date="2026-11-14" data-pages="8" data-size="686 KB">
+      <div class="card-top"><span class="badge energia js-cat" data-cat="energia">Energia</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Oil Radar — Previsione del crack spread USA</h3>
+      <p class="summary js-summary">Il crack 3-2-1 Gulf ha sfondato il record del 2022 con un picco di 75,6 $/bbl a settembre 2026;
+      scorte di distillati ai minimi storici e raffinerie al 92-98%. Previsione centrale: crack ancora elevato nei
+      prossimi 2-3 mesi (53-59 $/bbl), poi normalizzazione graduale nel 2027 verso 45-50 $/bbl - circa il doppio
+      della media storica. Il diesel è la variabile chiave del ciclo. Dati: EIA 2015-2026.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-14_previsione-crack-spread-usa.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-14_previsione-crack-spread-usa.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+  </div>
+  <p class="noresult" id="noresult">Nessun report trovato per questa ricerca.</p>
+</main>
+
+<footer>
+  <b id="f-head">⚡ Shocknomics — Economia, geopolitica, energia, sport</b>
+  <p><span id="f-tg">Canale Telegram ufficiale:</span> <a href="https://t.me/shocknomics" target="_blank" rel="noopener">t.me/shocknomics</a> · <span id="f-tgtag">«Pillole dal mondo»</span></p>
+  <p id="f-edition">Edizione 0 · Novembre 2026 · Nuove edizioni ogni mese · Riproduzione consentita citando la fonte.</p>
+  <p class="fine" id="f-disc">Le analisi finanziarie contenute nei documenti sono state elaborate su dati pubblici e hanno finalità
+  informativa: non costituiscono consulenza finanziaria personalizzata né sollecitazione all'investimento (MiFID II).</p>
+</footer>
+
+<script>
+(function(){
+  /* ---------- dizionario lingue ---------- */
+  var MONTHS = {
+    it:["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],
+    en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+    hi:["जनवरी","फ़रवरी","मार्च","अप्रैल","मई","जून","जुलाई","अगस्त","सितंबर","अक्टूबर","नवंबर","दिसंबर"]
+  };
+  function fmtDate(iso, lang){
+    var p = iso.split("-"), y = p[0], m = parseInt(p[1],10)-1, d = parseInt(p[2],10);
+    if(lang === "zh") return y + "年" + (m+1) + "月" + d + "日";
+    if(lang === "hi") return d + " " + MONTHS.hi[m] + " " + y;
+    return d + " " + MONTHS[lang][m] + " " + y;
+  }
+
+  var LANGS = {
+  it: {
+    docTitle:"⚡ Shocknomics — Economia, geopolitica, mercati e sport",
+    metaDesc:"Shocknomics: analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia e sport. Edizione novembre 2026 — 10 report PDF in download gratuito.",
+    sub:"Analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia, sport e mercati — costruite su dati pubblici. Ogni mese una nuova edizione: i PDF sono sempre scaricabili gratuitamente.",
+    edition:"EDIZIONE 0 · NOVEMBRE 2026",
+    tgLabel:"📢 Canale Telegram ufficiale", tgSmall:"@shocknomics · «Pillole dal mondo»",
+    stReports:"Report", stPages:"Pagine", stArch:"Archivio", stFree:"Per sempre",
+    shareSite:"Condividi Shocknomics:", copyLink:"🔗 Copia link",
+    chips:{all:"Tutti", energia:"⚡ Energia", metalli:"⛏ Metalli & materie prime", azionario:"📈 Azionario & Tech", sport:"⚽ Sport analytics"},
+    cats:{energia:"Energia", metalli:"Metalli & materie prime", azionario:"Azionario & Tech", sport:"Sport analytics"},
+    searchPh:"Cerca nei report…", noresult:"Nessun report trovato per questa ricerca.",
+    download:"⬇ Scarica gratis", open:"Apri", shareLbl:"Condividi:", copy:"🔗 Copia", copied:"✓ Copiato!",
+    metaTpl:"{p} pagine · {s} · PDF", emailSubject:"Report da leggere", via:"— via Shocknomics",
+    fHead:"⚡ Shocknomics — Economia, geopolitica, energia, sport",
+    fTg:"Canale Telegram ufficiale:", fTgTag:"«Pillole dal mondo»",
+    fEdition:"Edizione 0 · Novembre 2026 · Nuove edizioni ogni mese · Riproduzione consentita citando la fonte.",
+    fDisc:"Le analisi finanziarie contenute nei documenti sono state elaborate su dati pubblici e hanno finalità informativa: non costituiscono consulenza finanziaria personalizzata né sollecitazione all'investimento (MiFID II).",
+    cards:{
+      "nvda-fair-value":{title:"NVIDIA (NVDA): prospettive di vendita e fair value a 12 mesi",
+        summary:"Ricavi guidati a 108 mld $ nel Q3 FY27 (+66% a/a) con margine lordo ~74% e nessun ricavo compute dalla Cina. Backlog Blackwell + Rubin da ~1.000 mld $ fino a fine 2027. Il titolo, dopo le dimissioni del CEO Jensen Huang (12 nov.) e le paure di bolla AI, tratta a ~217 $ con P/E ~23x su FY27 e ~14x su FY28; consensus 298-330 $. Basata su dati indipendenti e pubblici; non è consulenza finanziaria."},
+      "nvda-switch-ai-2030":{title:"NVIDIA: valutazione, ciclo tecnologico e possibile switch del valore AI",
+        summary:"La tesi in una frase: NVIDIA può continuare a crescere anche mentre il suo peso relativo nell'ecosistema AI si riduce. Il punto di svolta non è il crollo del business chip, ma il momento in cui modelli e applicazioni trattengono una quota crescente del valore economico dell'AI. Scenari FY28-FY31 con tempi di maturazione compressi a metà rispetto ai cicli Intel e Cisco. Analisi di scenario personale."},
+      "superciclo-materie-prime":{title:"Il possibile nuovo superciclo delle materie prime 2026-2032",
+        summary:"Confronto con il ciclo 2000-2008/09: elettrificazione, rame e sicurezza energetica come motori di un possibile nuovo ciclo selettivo. Analizza i segnali già visibili nel 2026, i tre scenari per il periodo, gli indicatori da monitorare per capire se il superciclo è reale e i fattori che potrebbero interromperlo. Fonti: Banca Mondiale e International Energy Agency."},
+      "shale-usa-venezuela":{title:"Shale USA e il fattore Venezuela — verifica dati EIA",
+        summary:"Fact-checking sugli archivi EIA (WPSR, PSM, STEO di novembre 2026): la produzione statunitense di greggio è ai massimi storici, non in declino; lo shale rallenta per bacino, non crolla. Stime dei pozzi venezuelani e possibile effetto dei barili venezuelani sulla raffinazione del Golfo, con appendice su fonti e metodologia."},
+      "prevedibilita-previsioni-costi":{title:"Quanto sono affidabili le previsioni? E i costi spiegano i prezzi?",
+        summary:"Verifica storica su 180 coppie previsione-realizzazione (25 edizioni del Commodity Markets Outlook 2006-2026): le previsioni in corsa d'anno indovinano la direzione nell'80% dei casi, quelle a 12-18 mesi scendono al 52% (puro caso). I costi di produzione correlano quasi perfettamente con i prezzi ma li seguono, non li precedono. Parte 3 della ricerca sui metalli."},
+      "fondamentali-metalli-2027":{title:"Fondamentali dei mercati dei metalli — base per la previsione 2027",
+        summary:"Bilanci fisici di produzione, utilizzo e scorte da ICSG, INSG e ILZSG (Lisbona, ottobre 2026): nel 2027 l'offerta riprende ovunque mentre la domanda cresce a ritmo moderato. Surplus previsti per rame (+368 kt), piombo, nichel e zinco; deficit dell'argento ridimensionato e copertura mineraria dell'uranio ancora insufficiente. La Banca Mondiale prevede i metalli industriali -3,3% nel 2027."},
+      "mercati-metalli-scenari":{title:"Mercati dei metalli: quadro attuale e scenari a 12 mesi per le azioni",
+        summary:"Ottobre 2026 segnala forte divergenza: il rame ha toccato 14.508 $/t (record assoluto), stagno e zinco sui massimi, mentre il minerale di ferro resta debole e i preziosi correggono (argento da 92 a 57 $/oz, oro -14% dal picco). Le azioni del settore hanno corretto più dei metalli: il divario tra prezzi e titoli è il tema centrale per gli scenari a 12 mesi. Parte 1 della ricerca sui metalli."},
+      "analisi-allenatori-serie-a":{title:"Analisi prestazioni allenatori — Serie A (Coach Analytics)",
+        summary:"Indice composito «value-adjusted» per valutare stagioni e carriere degli allenatori di Serie A: punti, xG, spettacolo e dominio offensivo/difensivo rapportati al valore della rosa. 870 partite analizzate (agosto 2023 - novembre 2026) su dati FotMob e Transfermarkt, classifiche per stagione e di carriera, il «caso Zanetti» e verifica completa della qualità dei dati."},
+      "chi-beneficia-crack-spread":{title:"Oil Radar — Chi beneficia del crack spread e di quanto",
+        summary:"Con il crack 3-2-1 Gulf previsto in normalizzazione a ~48 $/bbl di media 2027, nessuna grande raffineria USA mostra ulteriore crescita degli utili: il picco è stato raggiunto nel 2026. Beneficiari residui: chi ha base depressa (Delek, Par Pacific) o guadagnerebbe nell'ottimismo (MPC +22%, PSX +19%, VLO +15%). Sul piano azionario il rischio è asimmetrico al ribasso. Companion del rapporto sulla previsione del crack."},
+      "previsione-crack-spread-usa":{title:"Oil Radar — Previsione del crack spread USA",
+        summary:"Il crack 3-2-1 Gulf ha sfondato il record del 2022 con un picco di 75,6 $/bbl a settembre 2026; scorte di distillati ai minimi storici e raffinerie al 92-98%. Previsione centrale: crack ancora elevato nei prossimi 2-3 mesi (53-59 $/bbl), poi normalizzazione graduale nel 2027 verso 45-50 $/bbl - circa il doppio della media storica. Il diesel è la variabile chiave del ciclo. Dati: EIA 2015-2026."}
+    }
+  },
+  en: {
+    docTitle:"⚡ Shocknomics — Economics, geopolitics, markets and sport",
+    metaDesc:"Shocknomics: independent analysis of economics, geopolitics, energy, metals, technology and sport. November 2026 edition — 10 free PDF reports.",
+    sub:"Independent analysis of economics, geopolitics, energy, metals, technology, sport and markets — built on public data. A new edition every month: all PDFs are always free to download.",
+    edition:"EDITION 0 · NOVEMBER 2026",
+    tgLabel:"📢 Official Telegram channel", tgSmall:"@shocknomics · «Pillole dal mondo»",
+    stReports:"Reports", stPages:"Pages", stArch:"Archive", stFree:"Free forever",
+    shareSite:"Share Shocknomics:", copyLink:"🔗 Copy link",
+    chips:{all:"All", energia:"⚡ Energy", metalli:"⛏ Metals & commodities", azionario:"📈 Equities & Tech", sport:"⚽ Sports analytics"},
+    cats:{energia:"Energy", metalli:"Metals & commodities", azionario:"Equities & Tech", sport:"Sports analytics"},
+    searchPh:"Search the reports…", noresult:"No reports found for this search.",
+    download:"⬇ Free download", open:"Open", shareLbl:"Share:", copy:"🔗 Copy", copied:"✓ Copied!",
+    metaTpl:"{p} pages · {s} · PDF", emailSubject:"Reports worth reading", via:"— via Shocknomics",
+    fHead:"⚡ Shocknomics — Economics, geopolitics, energy, sport",
+    fTg:"Official Telegram channel:", fTgTag:"«Pillole dal mondo»",
+    fEdition:"Edition 0 · November 2026 · New editions every month · Reproduction allowed with attribution.",
+    fDisc:"The financial analyses in these documents have been compiled from public data and are for information purposes only: they do not constitute personalised investment advice or a solicitation to invest (MiFID II).",
+    cards:{
+      "nvda-fair-value":{title:"NVIDIA (NVDA): sales outlook and 12-month fair value",
+        summary:"Guided revenue of $108bn in Q3 FY27 (+66% y/y) with ~74% gross margin and zero compute revenue from China. Blackwell + Rubin backlog up to ~$1,000bn through end-2027. After CEO Jensen Huang's resignation (12 Nov) and AI-bubble fears, the stock trades at ~$217 — P/E ~23x FY27 and ~14x FY28 EPS; consensus targets $298-330. Based on independent public data; not investment advice."},
+      "nvda-switch-ai-2030":{title:"NVIDIA: valuation, tech cycle and a possible AI value shift",
+        summary:"The thesis in one sentence: NVIDIA can keep growing even as its relative weight in the AI ecosystem shrinks. The turning point is not a collapse of the chip business but the moment when models and applications retain a growing share of AI's economic value. FY28-FY31 scenarios with maturation times halved versus the Intel and Cisco cycles. Personal scenario analysis."},
+      "superciclo-materie-prime":{title:"The possible new commodity supercycle 2026-2032",
+        summary:"A comparison with the 2000-2008/09 cycle: electrification, copper and energy security as engines of a possible new, selective cycle. It examines the signals already visible in 2026, three scenarios for the period, the indicators to watch to tell whether the supercycle is real, and the factors that could interrupt it. Sources: World Bank and International Energy Agency."},
+      "shale-usa-venezuela":{title:"US shale and the Venezuela factor — EIA data check",
+        summary:"Fact-checking against EIA archives (WPSR, PSM, the November 2026 STEO): US crude output is at record highs, not in decline; shale slows down basin by basin, it does not collapse. Estimates for Venezuelan wells and the possible effect of Venezuelan barrels on Gulf Coast refining, with an appendix on sources and methodology."},
+      "prevedibilita-previsioni-costi":{title:"How reliable are the forecasts? And do costs explain prices?",
+        summary:"A historical check on 180 forecast-realisation pairs (25 editions of the Commodity Markets Outlook, 2006-2026): in-year (April) forecasts get the direction right 80% of the time; 12-18-month-ahead (October) ones drop to 52% — pure chance. Production costs correlate almost perfectly with prices but follow them, they do not lead. Part 3 of the metals research."},
+      "fondamentali-metalli-2027":{title:"Metals market fundamentals — the base for the 2027 forecast",
+        summary:"Physical balances of production, use and stocks from ICSG, INSG and ILZSG (Lisbon, October 2026): in 2027 supply recovers everywhere while demand grows at a moderate pace. Surpluses expected for copper (+368 kt), lead, nickel and zinc; a smaller silver deficit and uranium mine output still short of needs. The World Bank sees industrial metals at -3.3% in 2027."},
+      "mercati-metalli-scenari":{title:"Metals markets: current picture and 12-month scenarios for the equities",
+        summary:"October 2026 shows sharp divergence: copper hit $14,508/t (an all-time record), tin and zinc at highs, while iron ore stays weak and precious metals correct (silver from $92 to $57/oz, gold -14% off its peak). Mining equities have fallen more than the metals themselves: the gap between prices and stocks is the central theme of the 12-month scenarios. Part 1 of the metals research."},
+      "analisi-allenatori-serie-a":{title:"Coaching performance analysis — Serie A (Coach Analytics)",
+        summary:"A «value-adjusted» composite index to rate the seasons and careers of Serie A coaches: points, xG, entertainment and attacking/defensive dominance relative to squad value. 870 matches analysed (August 2023 - November 2026) on FotMob and Transfermarkt data, season-by-season and all-time rankings, the «Zanetti case» and a full check of data quality."},
+      "chi-beneficia-crack-spread":{title:"Oil Radar — who benefits from the crack spread, and by how much",
+        summary:"With the 3-2-1 Gulf crack expected to normalise towards an average of ~$48/bbl in 2027, no large US refiner shows further earnings growth: the peak came in 2026. Remaining beneficiaries: those with a depressed base (Delek, Par Pacific) or the optimists' winners (MPC +22%, PSX +19%, VLO +15%). On the equity side the risk is asymmetric to the downside. Companion to the crack-spread forecast report."},
+      "previsione-crack-spread-usa":{title:"Oil Radar — US crack spread forecast",
+        summary:"The 3-2-1 Gulf crack broke the 2022 record with a $75.6/bbl peak in September 2026; distillate stocks are at historic lows and refineries are running at 92-98%. Central forecast: the crack stays high for the next 2-3 months ($53-59/bbl), then gradually normalises through 2027 towards $45-50/bbl — about double the historical average. Diesel is the key variable of the cycle. Data: EIA 2015-2026."}
+    }
+  },
+  zh: {
+    docTitle:"⚡ Shocknomics — 经济、地缘政治、市场与体育",
+    metaDesc:"Shocknomics：涵盖经济、地缘政治、能源、金属、科技与体育的独立分析。2026 年 11 月期——10 份免费 PDF 报告。",
+    sub:"独立分析覆盖经济、地缘政治、能源、金属、科技、体育与市场——全部基于公开数据。每月推出新一期，所有 PDF 永久免费下载。",
+    edition:"第 0 期 · 2026 年 11 月",
+    tgLabel:"📢 官方 Telegram 频道", tgSmall:"@shocknomics ·「Pillole dal mondo」",
+    stReports:"报告", stPages:"页数", stArch:"档案大小", stFree:"永久免费",
+    shareSite:"分享 Shocknomics：", copyLink:"🔗 复制链接",
+    chips:{all:"全部", energia:"⚡ 能源", metalli:"⛏ 金属与大宗商品", azionario:"📈 股票与科技", sport:"⚽ 体育数据"},
+    cats:{energia:"能源", metalli:"金属与大宗商品", azionario:"股票与科技", sport:"体育数据"},
+    searchPh:"搜索报告…", noresult:"未找到符合条件的报告。",
+    download:"⬇ 免费下载", open:"打开", shareLbl:"分享：", copy:"🔗 复制", copied:"✓ 已复制！",
+    metaTpl:"{p} 页 · {s} · PDF", emailSubject:"值得一读的报告", via:"— 来自 Shocknomics",
+    fHead:"⚡ Shocknomics — 经济、地缘政治、能源、体育",
+    fTg:"官方 Telegram 频道：", fTgTag:"「Pillole dal mondo」",
+    fEdition:"第 0 期 · 2026 年 11 月 · 每月推出新一期 · 转载请注明出处。",
+    fDisc:"文中金融分析基于公开数据编制，仅供参考：不构成个性化投资建议，亦不构成投资邀约 (MiFID II)。",
+    cards:{
+      "nvda-fair-value":{title:"英伟达 (NVDA)：销售展望与 12 个月公允价值",
+        summary:"第三财季 (FY27 Q3) 营收指引 1,080 亿美元（同比 +66%），毛利率约 74%，且不含来自中国的算力收入。Blackwell + Rubin 订单积压至 2027 年底约 1 万亿美元。在 CEO 黄仁勋辞职（11 月 12 日）与 AI 泡沫担忧之后，股价交易于约 217 美元——对应 FY27 市盈率约 23 倍、FY28 约 14 倍；分析师共识目标价 298-330 美元。基于独立公开数据，不构成投资建议。"},
+      "nvda-switch-ai-2030":{title:"英伟达：估值、技术周期与 AI 价值转移的可能",
+        summary:"一句话论点：即使英伟达在 AI 生态中的相对权重下降，它仍可继续增长。转折点不是芯片业务崩塌，而是模型与应用开始留存越来越大的 AI 经济价值份额之时。FY28–FY31 情景，成熟时间较英特尔与思科周期压缩一半。个人情景分析。"},
+      "superciclo-materie-prime":{title:"可能启动的大宗商品新超级周期（2026–2032）",
+        summary:"与 2000–2008/09 周期对比：电气化、铜与能源安全或成为新一轮选择性周期的引擎。报告分析 2026 年已显现的信号、该时期的三种情景、判断超级周期真伪的关键指标，以及可能中断周期的因素。资料来源：世界银行与国际能源署。"},
+      "shale-usa-venezuela":{title:"美国页岩油与委内瑞拉因素——EIA 数据核查",
+        summary:"基于 EIA 档案（WPSR、PSM、2026 年 11 月 STEO）的事实核查：美国原油产量处于历史高位而非下滑；页岩油按盆地增速放缓，并未崩塌。含委内瑞拉油井估算，以及委内瑞拉原油对墨西哥湾沿岸炼油可能影响的附录与数据方法论。"},
+      "prevedibilita-previsioni-costi":{title:"预测有多可靠？成本能否解释价格？",
+        summary:"基于 180 组「预测-实现」配对的检验（《大宗商品市场展望》2006–2026 共 25 期）：当年 4 月预测的方向准确率为 80%，提前 12-18 个月（10 月）的降至 52%，等同于掷硬币。生产成本与价格近乎完全相关，但成本跟随价格，而非领先。金属研究第三部分。"},
+      "fondamentali-metalli-2027":{title:"金属市场基本面——2027 年预测的基础",
+        summary:"来自 ICSG、INSG、ILZSG（里斯本，2026 年 10 月）的生产、使用与库存实物平衡表：2027 年供应全面恢复，需求温和增长。预计铜（+36.8 万吨）、铅、镍、锌出现过剩；白银赤字收窄，铀矿产量仍不足以满足需求。世界银行预计 2027 年工业金属价格下跌 3.3%。"},
+      "mercati-metalli-scenari":{title:"金属市场：现状与矿业股票 12 个月情景",
+        summary:"2026 年 10 月呈现明显分化：铜触及 14,508 美元/吨（历史新高），锡、锌处于高位；铁矿石依旧疲软，贵金属回调（白银从 92 美元/盎司回落至 57 美元，黄金较峰值 -14%）。矿业股票跌幅超过金属本身：价格与股票之间的背离是未来 12 个月情景的核心议题。金属研究第一部分。"},
+      "analisi-allenatori-serie-a":{title:"主教练表现分析——意甲（教练数据分析）",
+        summary:"采用「价值调整」综合指数评估意甲教练的赛季与生涯表现：将积分、预期进球 (xG)、观赏性及攻防控制力与球队身价挂钩。基于 FotMob 与 Transfermarkt 数据分析 870 场比赛（2023 年 8 月至 2026 年 11 月），包括赛季与生涯总排名、「扎内蒂案例」以及完整的数据质量核查。"},
+      "chi-beneficia-crack-spread":{title:"石油雷达——谁从裂解价差中获益，获益多少",
+        summary:"预计 2027 年墨西哥湾 3-2-1 裂解价差将向约 48 美元/桶的均值回归，美国大型炼厂盈利不再增长：峰值已在 2026 年出现。剩余受益者：基数偏低的（Delek、Par Pacific）或在乐观情景下的赢家（MPC +22%、PSX +19%、VLO +15%）。就股票而言，下行风险呈不对称。本报告为裂解价差预测的姊妹篇。"},
+      "previsione-crack-spread-usa":{title:"石油雷达——美国裂解价差预测",
+        summary:"墨西哥湾 3-2-1 裂解价差突破 2022 年纪录，2026 年 9 月峰值达 75.6 美元/桶；馏分油库存处于历史低位，炼厂开工率 92-98%。基准预测：未来 2-3 个月裂解价差仍将高企（53-59 美元/桶），随后在 2027 年逐步回归 45-50 美元/桶——约为历史均值的两倍。柴油是本周期的关键变量。数据：EIA 2015–2026。"}
+    }
+  },
+  hi: {
+    docTitle:"⚡ Shocknomics — अर्थव्यवस्था, भू-राजनीति, बाज़ार और खेल",
+    metaDesc:"Shocknomics: अर्थव्यवस्था, भू-राजनीति, ऊर्जा, धातु, प्रौद्योगिकी और खेल पर स्वतंत्र विश्लेषण। नवंबर 2026 अंक — 10 मुफ़्त PDF रिपोर्ट।",
+    sub:"अर्थव्यवस्था, भू-राजनीति, ऊर्जा, धातु, प्रौद्योगिकी, खेल और बाज़ार पर स्वतंत्र विश्लेषण — सार्वजनिक डेटा पर आधारित। हर महीने नया अंक: सभी PDF हमेशा मुफ़्त डाउनलोड।",
+    edition:"अंक 0 · नवंबर 2026",
+    tgLabel:"📢 आधिकारिक टेलीग्राम चैनल", tgSmall:"@shocknomics · «Pillole dal mondo»",
+    stReports:"रिपोर्ट", stPages:"पेज", stArch:"संग्रह", stFree:"हमेशा मुफ़्त",
+    shareSite:"Shocknomics साझा करें:", copyLink:"🔗 लिंक कॉपी करें",
+    chips:{all:"सभी", energia:"⚡ ऊर्जा", metalli:"⛏ धातु और कमोडिटी", azionario:"📈 इक्विटी और टेक", sport:"⚽ खेल विश्लेषण"},
+    cats:{energia:"ऊर्जा", metalli:"धातु और कमोडिटी", azionario:"इक्विटी और टेक", sport:"खेल विश्लेषण"},
+    searchPh:"रिपोर्ट खोजें…", noresult:"इस खोज के लिए कोई रिपोर्ट नहीं मिली।",
+    download:"⬇ मुफ़्त डाउनलोड", open:"खोलें", shareLbl:"साझा करें:", copy:"🔗 कॉपी", copied:"✓ कॉपी हो गया!",
+    metaTpl:"{p} पेज · {s} · PDF", emailSubject:"पढ़ने लायक रिपोर्ट", via:"— Shocknomics के माध्यम से",
+    fHead:"⚡ Shocknomics — अर्थव्यवस्था, भू-राजनीति, ऊर्जा, खेल",
+    fTg:"आधिकारिक टेलीग्राम चैनल:", fTgTag:"«Pillole dal mondo»",
+    fEdition:"अंक 0 · नवंबर 2026 · हर महीने नए अंक · स्रोत सहित पुनरुत्पादन की अनुमति।",
+    fDisc:"दस्तावेज़ों में दिए गए वित्तीय विश्लेषण सार्वजनिक डेटा पर आधारित हैं और केवल सूचना उद्देश्य के लिए हैं: ये व्यक्तिगत निवेश सलाह या निवेश का आग्रह नहीं हैं (MiFID II)।",
+    cards:{
+      "nvda-fair-value":{title:"एनवीडिया (NVDA): बिक्री का आउटलुक और 12 महीने का फेयर वैल्यू",
+        summary:"FY27 की तीसरी तिमाही में 108 अरब डॉलर का राजस्व गाइडेंस (+66% YoY), ~74% ग्रॉस मार्जिन, और चीन से शून्य कंप्यूट राजस्व। 2027 के अंत तक Blackwell + Rubin बैकलॉग ~1,000 अरब डॉलर। CEO जेन्सन ह्यूएंग के इस्तीफ़े (12 नवंबर) और AI-बबल की आशंकाओं के बाद शेयर ~217 डॉलर पर — FY27 पर P/E ~23x और FY28 पर ~14x; सहमति लक्ष्य 298-330 डॉलर। स्वतंत्र सार्वजनिक डेटा पर आधारित; निवेश सलाह नहीं।"},
+      "nvda-switch-ai-2030":{title:"एनवीडिया: वैल्यूएशन, टेक चक्र और AI मूल्य-स्थानांतरण की संभावना",
+        summary:"एक वाक्य में थीसिस: AI इकोसिस्टम में अपना सापेक्षिक वजन घटने पर भी एनवीडिया बढ़ता रह सकता है। मोड़ चिप बिज़नेस के पतन में नहीं, बल्कि उस क्षण में है जब मॉडल और ऐप्स AI के आर्थिक मूल्य का बढ़ता हिस्सा रखने लगते हैं। FY28–FY31 परिदृश्य, इंटेल व सिस्को चक्रों की तुलना में परिपक्वता समय आधा। व्यक्तिगत परिदृश्य विश्लेषण।"},
+      "superciclo-materie-prime":{title:"संभावित नया कमोडिटी सुपरसाइकल 2026-2032",
+        summary:"2000-2008/09 चक्र से तुलना: विद्युतीकरण, तांबा और ऊर्जा सुरक्षा एक संभावित नए, चयनात्मक चक्र के इंजन। 2026 में दिख रहे संकेत, अवधि के तीन परिदृश्य, यह जाँचने के संकेतक कि सुपरसाइकल असली है या नहीं, और उसे रोकने वाले कारक। स्रोत: वर्ल्ड बैंक और इंटरनेशनल एनर्जी एजेंसी।"},
+      "shale-usa-venezuela":{title:"अमेरिकी शेल और वेनेज़ुएला कारक — EIA डेटा जाँच",
+        summary:"EIA अभिलेखों (WPSR, PSM, नवंबर 2026 STEO) से फैक्ट-चेक: अमेरिकी क्रूड उत्पादन रिकॉर्ड उच्च स्तर पर है, गिरावट में नहीं; शेल बेसिन-दर-बेसिन धीमा होता है, ढहता नहीं। वेनेज़ुएला कुओं के अनुमान और मेक्सिको खाड़ी शोधन पर वेनेज़ुएला बैरल के संभावित प्रभाव, स्रोत व कार्यपद्धति पर परिशिष्ट सहित।"},
+      "prevedibilita-previsioni-costi":{title:"पूर्वानुमान कितने भरोसेमंद? और क्या लागतें कीमतें समझाती हैं?",
+        summary:"180 पूर्वानुमान-परिणाम जोड़ियों पर ऐतिहासिक जाँच (कमोडिटी मार्केट्स आउटलुक के 25 संस्करण, 2006-2026): चालू वर्ष के (अप्रैल) पूर्वानुमान 80% मामलों में दिशा सही पाते हैं; 12-18 महीने आगे (अक्टूबर) वाले 52% पर गिरते हैं — शुद्ध सिक्का उछाल। उत्पादन लागतें कीमतों से लगभग पूर्ण सहसंबंध में हैं, पर वे कीमतों का अनुसरण करती हैं, अगुवाई नहीं करतीं। धातु शोध का भाग 3।"},
+      "fondamentali-metalli-2027":{title:"धातु बाज़ार के फंडामेंटल — 2027 पूर्वानुमान का आधार",
+        summary:"ICSG, INSG और ILZSG (लिस्बन, अक्टूबर 2026) से उत्पादन, उपयोग और स्टॉक के भौतिक बहीखाते: 2027 में आपूर्ति हर जगह सुधरती है जबकि मांग संयमित गति से बढ़ती है। तांबा (+368 kt), लेड, निकल और ज़िंक में अधिशेष अपेक्षित; चांदी का घाटा घटा, और यूरेनियम की खनन आपूर्ति अभी भी कम। वर्ल्ड बैंक का अनुमान: 2027 में औद्योगिक धातुएँ -3.3%।"},
+      "mercati-metalli-scenari":{title:"धातु बाज़ार: मौजूदा परिदृश्य और शेयरों के लिए 12 महीने के अनुमान",
+        summary:"अक्टूबर 2026 में तेज असमानता: तांबा 14,508 डॉलर/टन (सर्वकालिक रिकॉर्ड), टिन और ज़िंक उच्च स्तर पर; लौह अयस्क कमज़ोर, कीमती धातुएँ सुधर रही हैं (चांदी 92 से 57 डॉलर/औंस, सोना चोटी से -14%)। खनन शेयर धातुओं से अधिक गिरे: कीमतों और शेयरों के बीच यह अंतर 12 महीने के परिदृश्यों का केंद्रीय विषय है। धातु शोध का भाग 1।"},
+      "analisi-allenatori-serie-a":{title:"कोचिंग प्रदर्शन विश्लेषण — सेरी आ (कोच एनालिटिक्स)",
+        summary:"सेरी आ के कोचों के सीज़न और करियर को मापने के लिए «वैल्यू-एडजस्टेड» संयुक्त सूचकांक: अंक, xG, मनोरंजन और आक्रामक/रक्षात्मक वर्चस्व को स्क्वाड मूल्य के अनुपात में। FotMob और Transfermarkt डेटा पर 870 मैचों का विश्लेषण (अगस्त 2023 - नवंबर 2026), सीज़न-वार व ऑल-टाइम रैंकिंग, «ज़ानेत्ती मामला» और डेटा गुणवत्ता की पूरी जाँच।"},
+      "chi-beneficia-crack-spread":{title:"ऑयल राडार — क्रैक स्प्रेड से किसे फ़ायदा, और कितना",
+        summary:"2027 में 3-2-1 गल्फ क्रैक के औसतन ~48 डॉलर/बैरल पर सामान्य होने के अनुमान के साथ, किसी बड़ी अमेरिकी रिफाइनरी में आगे आय-वृद्धि नहीं दिखती: चरम 2026 में आ चुका है। शेष लाभार्थी: निम्न आधार वाले (डेलेक, पार पैसिफ़िक) या आशावादी परिदृश्य के विजेता (MPC +22%, PSX +19%, VLO +15%)। शेयरों पर जोखिम गिरावट की ओर असममित है। क्रैक-स्प्रेड पूर्वानुमान रिपोर्ट का साथी दस्तावेज़।"},
+      "previsione-crack-spread-usa":{title:"ऑयल राडार — अमेरिकी क्रैक स्प्रेड पूर्वानुमान",
+        summary:"3-2-1 गल्फ क्रैक ने 2022 का रिकॉर्ड तोड़ दिया, सितंबर 2026 में चरम 75.6 डॉलर/बैरल; डिस्टिलेट स्टॉक ऐतिहासिक न्यूनतम पर और रिफाइनरियाँ 92-98% पर चल रही हैं। मूल पूर्वानुमान: अगले 2-3 महीनों में क्रैक ऊँचा रहेगा (53-59 डॉलर/बैरल), फिर 2027 में धीरे-धीरे 45-50 डॉलर/बैरल की ओर — ऐतिहासिक औसत का लगभग दोगुना। डीज़ल चक्र का मुख्य चालक है। डेटा: EIA 2015-2026।"}
+    }
+  }
+  };
+
+  var cur = "it";
+  try { var saved = localStorage.getItem("sn_lang"); if(saved && LANGS[saved]) cur = saved; } catch(e){}
+
+  function set(id, text){ var el = document.getElementById(id); if(el) el.textContent = text; }
+
+  function applyLang(lang){
+    cur = LANGS[lang] ? lang : "it";
+    try { localStorage.setItem("sn_lang", cur); } catch(e){}
+    var D = LANGS[cur];
+    document.documentElement.lang = cur;
+    document.title = D.docTitle;
+    var md = document.querySelector('meta[name="description"]'); if(md) md.setAttribute("content", D.metaDesc);
+    var og1 = document.querySelector('meta[property="og:title"]'); if(og1) og1.setAttribute("content", D.docTitle);
+    var og2 = document.querySelector('meta[property="og:description"]'); if(og2) og2.setAttribute("content", D.metaDesc);
+
+    set("h-sub", D.sub); set("h-edition", D.edition);
+    set("h-tglabel", D.tgLabel); set("h-tgsmall", D.tgSmall);
+    set("st-reports", D.stReports); set("st-pages", D.stPages); set("st-arch", D.stArch); set("st-free", D.stFree);
+    set("h-sharesite", D.shareSite); set("h-copy", D.copyLink);
+    set("chip-all", D.chips.all); set("chip-energia", D.chips.energia); set("chip-metalli", D.chips.metalli);
+    set("chip-azionario", D.chips.azionario); set("chip-sport", D.chips.sport);
+    var q = document.getElementById("q"); if(q) q.placeholder = D.searchPh;
+    set("noresult", D.noresult);
+    set("f-head", D.fHead); set("f-tg", D.fTg); set("f-tgtag", D.fTgTag);
+    set("f-edition", D.fEdition); set("f-disc", D.fDisc);
+
+    document.querySelectorAll(".btn-dl").forEach(function(el){ el.textContent = D.download; });
+    document.querySelectorAll(".btn-view").forEach(function(el){ el.textContent = D.open; });
+    document.querySelectorAll(".js-sharelbl").forEach(function(el){ el.textContent = D.shareLbl; });
+    document.querySelectorAll(".card .sbtn.cp").forEach(function(el){ el.textContent = D.copy; });
+
+    document.querySelectorAll(".card").forEach(function(card){
+      var c = D.cards[card.id]; if(!c) return;
+      var badgeEl = card.querySelector(".js-cat");
+      if(badgeEl) badgeEl.textContent = D.cats[badgeEl.dataset.cat] || "";
+      var dateEl = card.querySelector(".js-date");
+      if(dateEl) dateEl.textContent = fmtDate(card.dataset.date || "2026-11-01", cur);
+      card.querySelector(".js-title").textContent = c.title;
+      card.querySelector(".js-summary").textContent = c.summary;
+      var meta = card.querySelector(".js-meta");
+      if(meta) meta.textContent = D.metaTpl.replace("{p}", card.dataset.pages || "").replace("{s}", card.dataset.size || "");
+      card.querySelectorAll(".sbtn").forEach(function(b){ b.dataset.title = c.title; });
+    });
+
+    document.querySelectorAll(".shareall .sbtn").forEach(function(b){ b.dataset.title = D.docTitle; });
+    document.querySelectorAll(".lang").forEach(function(b){ b.classList.toggle("active", b.dataset.lang === cur); });
+  }
+
+  /* cambio lingua */
+  document.querySelectorAll(".lang").forEach(function(b){
+    b.addEventListener("click", function(){ applyLang(b.dataset.lang); apply(); });
+  });
+  applyLang(cur);
+
+  /* ---------- condivisione ---------- */
+  var pageURL = location.origin + location.pathname;
+
+  function shareURL(kind, title){
+    var t = title.indexOf("Shocknomics") !== -1 ? "⚡ " + title : "⚡ " + title + " " + LANGS[cur].via;
+    var u = pageURL;
+    switch(kind){
+      case "wa": return "https://wa.me/?text=" + encodeURIComponent(t + " → " + u);
+      case "tg": return "https://t.me/share/url?url=" + encodeURIComponent(u) + "&text=" + encodeURIComponent(t);
+      case "x":  return "https://twitter.com/intent/tweet?text=" + encodeURIComponent(t) + "&url=" + encodeURIComponent(u);
+      case "li": return "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(u);
+      case "fb": return "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(u);
+      case "em": return "mailto:?subject=" + encodeURIComponent(LANGS[cur].emailSubject) + "&body=" + encodeURIComponent(t + "\n" + u);
+    }
+    return u;
+  }
+
+  document.addEventListener("click", function(e){
+    var btn = e.target.closest(".sbtn");
+    if(!btn) return;
+    var kind = btn.dataset.share, title = btn.dataset.title || document.title;
+
+    if(kind === "cp"){
+      var done = function(){ var old = btn.textContent; btn.textContent = LANGS[cur].copied; setTimeout(function(){ btn.textContent = old; }, 1600); };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(pageURL).then(done, function(){ fallbackCopy(); done(); });
+      } else { fallbackCopy(); done(); }
+      function fallbackCopy(){
+        var ta = document.createElement("textarea"); ta.value = pageURL; document.body.appendChild(ta);
+        ta.select(); try{ document.execCommand("copy"); }catch(_){} document.body.removeChild(ta);
+      }
+      return;
+    }
+    window.open(shareURL(kind, title), "_blank", "noopener,noreferrer,width=640,height=520");
+  });
+
+  /* ---------- filtri categoria + ricerca ---------- */
+  var chips = document.querySelectorAll(".chip"), cards = document.querySelectorAll(".card"),
+      q = document.getElementById("q"), noresult = document.getElementById("noresult"),
+      cat = "all";
+  function textOfCard(c){ return (c.querySelector(".js-title").textContent + " " + c.querySelector(".js-summary").textContent + " " + c.querySelector(".js-cat").textContent).toLowerCase(); }
+  function apply(){
+    var text = (q.value || "").toLowerCase(), vis = 0;
+    cards.forEach(function(c){
+      var ok = (cat === "all" || c.dataset.cat === cat) &&
+               (!text || textOfCard(c).indexOf(text) !== -1);
+      c.style.display = ok ? "" : "none";
+      if(ok) vis++;
+    });
+    noresult.style.display = vis ? "none" : "block";
+  }
+  chips.forEach(function(ch){
+    ch.addEventListener("click", function(){
+      chips.forEach(function(c){ c.classList.remove("active"); });
+      ch.classList.add("active"); cat = ch.dataset.cat; apply();
+    });
+  });
+  q.addEventListener("input", apply);
+  apply();
+})();
+</script>
+</body>
+</html>
