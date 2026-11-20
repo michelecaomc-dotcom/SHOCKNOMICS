@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>⚡ Shocknomics — Economia, geopolitica, mercati e sport</title>
-<meta name="description" content="Shocknomics: analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia e sport. Edizione novembre 2026 — 14 report PDF in download gratuito.">
+<meta name="description" content="Shocknomics: analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia e sport. Edizione novembre 2026 — 15 report PDF in download gratuito.">
 <meta property="og:title" content="⚡ Shocknomics — Economia, geopolitica, mercati e sport">
 <meta property="og:description" content="Analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia e sport. PDF scaricabili gratuitamente. Edizione: Novembre 2026.">
 <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
   :root{
     --bg:#f5f6f8; --card:#ffffff; --ink:#1a2332; --muted:#5b6b7e;
     --accent:#2456a6; --accent2:#1d3d75; --line:#e3e7ee;
-    --energia:#d35400; --metalli:#0e8a7d; --azionario:#2456a6; --sport:#1e8e4d;
+    --energia:#d35400; --metalli:#0e8a7d; --azionario:#2456a6; --sport:#1e8e4d; --geopolitica:#a23845;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans Devanagari","Noto Sans SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
@@ -57,6 +57,7 @@
   .badge{font-size:.72rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#fff;padding:3px 10px;border-radius:999px}
   .badge.energia{background:var(--energia)} .badge.metalli{background:var(--metalli)}
   .badge.azionario{background:var(--azionario)} .badge.sport{background:var(--sport)}
+  .badge.geopolitica{background:var(--geopolitica)}
   .date{font-size:.8rem;color:var(--muted);font-weight:600}
   .card h3{font-size:1.12rem;line-height:1.35;letter-spacing:-.2px}
   .summary{font-size:.92rem;color:#3d4a5c;flex:1}
@@ -101,9 +102,9 @@
     <span id="h-tglabel">📢 Canale Telegram ufficiale</span> <small id="h-tgsmall">@shocknomics · «Pillole dal mondo»</small>
   </a></div>
   <div class="stats">
-    <div class="stat"><b>14</b><span id="st-reports">Report</span></div>
-    <div class="stat"><b>175</b><span id="st-pages">Pagine</span></div>
-    <div class="stat"><b>~6 MB</b><span id="st-arch">Archivio</span></div>
+    <div class="stat"><b>15</b><span id="st-reports">Report</span></div>
+    <div class="stat"><b>179</b><span id="st-pages">Pagine</span></div>
+    <div class="stat"><b>~6,5 MB</b><span id="st-arch">Archivio</span></div>
     <div class="stat"><b>0 €</b><span id="st-free">Per sempre</span></div>
   </div>
   <div class="shareall">
@@ -124,12 +125,68 @@
     <button class="chip" data-cat="metalli" id="chip-metalli">⛏ Metalli &amp; materie prime</button>
     <button class="chip" data-cat="azionario" id="chip-azionario">📈 Azionario &amp; Tech</button>
     <button class="chip" data-cat="sport" id="chip-sport">⚽ Sport analytics</button>
+    <button class="chip" data-cat="geopolitica" id="chip-geopolitica">🌍 Geopolitica &amp; rischio</button>
   </div>
   <div class="searchbox"><input id="q" type="search" placeholder="Cerca nei report…" aria-label="Cerca"></div>
 </div>
 
 <main>
   <div class="grid" id="grid">
+
+    <article class="card" id="criticita-gruppi-russi" data-cat="geopolitica" data-date="2026-11-20" data-pages="10" data-size="281 KB">
+      <div class="card-top"><span class="badge geopolitica js-cat" data-cat="geopolitica">Geopolitica &amp; rischio</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Criticità dei principali gruppi aziendali russi — rischio settoriale e operativo</h3>
+      <p class="summary js-summary">Mappatura delle vulnerabilità di sette comparti chiave dell'economia russa — estrattivo,
+      metallurgico, energetico, digitale, finanziario, agroindustriale e manifattura complessa — a partire da cinque
+      fattori sistemici: sanzioni ed esclusione dai mercati occidentali, colli di bottiglia logistici del riorientamento
+      verso Est (saturazione di BAM e Transiberiana, sconti forzati sui prezzi), dipendenza da macchinari, turbine e
+      software occidentali, costo del capitale ai livelli della Bank of Russia con prelievi fiscali straordinari,
+      isolamento SWIFT e volatilità del rublo. Schede di criticità per i principali gruppi — da Gazprom, Rosneft e
+      Lukoil a Sberbank e VTB, da Nornickel a Power Machines — e matrice comparativa di rischio primario, secondario e
+      strutturale per filiera. Nota metodologica: la presenza in elenco non implica negoziabilità degli strumenti per
+      investitori UE.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-20_analisi-criticita-gruppi-russi.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-20_analisi-criticita-gruppi-russi.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+    <article class="card" id="analisi-allenatori-serie-a" data-cat="sport" data-date="2026-11-19" data-pages="11" data-size="223 KB">
+      <div class="card-top"><span class="badge sport js-cat" data-cat="sport">Sport analytics</span><span class="date js-date"></span></div>
+      <h3 class="js-title">Panchine — Quattro stagioni di allenatori di Serie A (Coach Analytics)</h3>
+      <p class="summary js-summary">Indice composito &laquo;value-adjusted&raquo; per valutare le panchine di Serie A: risultati rispetto al
+      valore della rosa (30%), qualità del gioco — occasioni create e concesse (45%) — e dominio dei tiri in porta
+      (25%), zero punti assoluti. 1.250 partite analizzate (2023/24 - 2026/27 a 11 giornate) su dati FotMob,
+      156 panchine e 41 allenatori in classifica di carriera con il metodo del punto medio su 153 combinazioni di
+      pesi; la classifica dell'anno 2026/27 con commento, le stagioni più forti del quadriennio e l'appendice con
+      dati, formule e strumenti. Edizione novembre 2026.</p>
+      <div class="meta js-meta"></div>
+      <div class="actions">
+        <a class="btn-dl" href="pdfs/2026-11-19_panchine-allenatori-serie-a.pdf" download>⬇ Scarica gratis</a>
+        <a class="btn-view" href="pdfs/2026-11-19_panchine-allenatori-serie-a.pdf" target="_blank" rel="noopener">Apri</a>
+      </div>
+      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
+        <button class="sbtn wa" data-share="wa">WhatsApp</button>
+        <button class="sbtn tg" data-share="tg">Telegram</button>
+        <button class="sbtn x"  data-share="x">X</button>
+        <button class="sbtn li" data-share="li">LinkedIn</button>
+        <button class="sbtn fb" data-share="fb">Facebook</button>
+        <button class="sbtn em" data-share="em">Email</button>
+        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
+      </div>
+    </article>
+
+
 
     <article class="card" id="uranio-superciclo" data-cat="azionario" data-date="2026-11-17" data-pages="35" data-size="371 KB">
       <div class="card-top"><span class="badge azionario js-cat" data-cat="azionario">Azionario &amp; Tech</span><span class="date js-date"></span></div>
@@ -376,28 +433,6 @@
       </div>
     </article>
 
-    <article class="card" id="analisi-allenatori-serie-a" data-cat="sport" data-date="2026-11-14" data-pages="24" data-size="1,1 MB">
-      <div class="card-top"><span class="badge sport js-cat" data-cat="sport">Sport analytics</span><span class="date js-date"></span></div>
-      <h3 class="js-title">Analisi prestazioni allenatori — Serie A (Coach Analytics)</h3>
-      <p class="summary js-summary">Indice composito &laquo;value-adjusted&raquo; per valutare stagioni e carriere degli allenatori di Serie A:
-      punti, xG, spettacolo e dominio offensivo/difensivo rapportati al valore della rosa. 870 partite analizzate
-      (agosto 2023 - novembre 2026) su dati FotMob e Transfermarkt, classifiche per stagione e di carriera,
-      il &laquo;caso Zanetti&raquo; e verifica completa della qualità dei dati.</p>
-      <div class="meta js-meta"></div>
-      <div class="actions">
-        <a class="btn-dl" href="pdfs/2026-11-14_analisi-allenatori-serie-a.pdf" download>⬇ Scarica gratis</a>
-        <a class="btn-view" href="pdfs/2026-11-14_analisi-allenatori-serie-a.pdf" target="_blank" rel="noopener">Apri</a>
-      </div>
-      <div class="share"><span class="lbl js-sharelbl">Condividi:</span>
-        <button class="sbtn wa" data-share="wa">WhatsApp</button>
-        <button class="sbtn tg" data-share="tg">Telegram</button>
-        <button class="sbtn x"  data-share="x">X</button>
-        <button class="sbtn li" data-share="li">LinkedIn</button>
-        <button class="sbtn fb" data-share="fb">Facebook</button>
-        <button class="sbtn em" data-share="em">Email</button>
-        <button class="sbtn cp" data-share="cp">🔗 Copia</button>
-      </div>
-    </article>
 
     <article class="card" id="chi-beneficia-crack-spread" data-cat="energia" data-date="2026-11-14" data-pages="7" data-size="435 KB">
       <div class="card-top"><span class="badge energia js-cat" data-cat="energia">Energia</span><span class="date js-date"></span></div>
@@ -475,14 +510,14 @@
   var LANGS = {
   it: {
     docTitle:"⚡ Shocknomics — Economia, geopolitica, mercati e sport",
-    metaDesc:"Shocknomics: analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia e sport. Edizione novembre 2026 — 14 report PDF in download gratuito.",
+    metaDesc:"Shocknomics: analisi indipendenti su economia, geopolitica, energia, metalli, tecnologia e sport. Edizione novembre 2026 — 15 report PDF in download gratuito.",
     sub:"Documento informativo: le analisi hanno finalità informativa e non costituiscono consulenza finanziaria personalizzata né sollecitazione all'investimento (MiFID II). Ogni mese una nuova edizione: i PDF sono sempre scaricabili gratuitamente.",
     edition:"EDIZIONE 0 · NOVEMBRE 2026",
     tgLabel:"📢 Canale Telegram ufficiale", tgSmall:"@shocknomics · «Pillole dal mondo»",
     stReports:"Report", stPages:"Pagine", stArch:"Archivio", stFree:"Per sempre",
     shareSite:"Condividi Shocknomics:", copyLink:"🔗 Copia link",
-    chips:{all:"Tutti", energia:"⚡ Energia", metalli:"⛏ Metalli & materie prime", azionario:"📈 Azionario & Tech", sport:"⚽ Sport analytics"},
-    cats:{energia:"Energia", metalli:"Metalli & materie prime", azionario:"Azionario & Tech", sport:"Sport analytics"},
+    chips:{all:"Tutti", energia:"⚡ Energia", metalli:"⛏ Metalli & materie prime", azionario:"📈 Azionario & Tech", sport:"⚽ Sport analytics", geopolitica:"🌍 Geopolitica & rischio"},
+    cats:{energia:"Energia", metalli:"Metalli & materie prime", azionario:"Azionario & Tech", sport:"Sport analytics", geopolitica:"Geopolitica & rischio"},
     searchPh:"Cerca nei report…", noresult:"Nessun report trovato per questa ricerca.",
     download:"⬇ Scarica gratis", open:"Apri", shareLbl:"Condividi:", copy:"🔗 Copia", copied:"✓ Copiato!",
     metaTpl:"{p} pagine · {s} · PDF", emailSubject:"Report da leggere", via:"— via Shocknomics",
@@ -507,8 +542,10 @@
         summary:"Bilanci fisici di produzione, utilizzo e scorte da ICSG, INSG e ILZSG (Lisbona, ottobre 2026): nel 2027 l'offerta riprende ovunque mentre la domanda cresce a ritmo moderato. Surplus previsti per rame (+368 kt), piombo, nichel e zinco; deficit dell'argento ridimensionato e copertura mineraria dell'uranio ancora insufficiente. La Banca Mondiale prevede i metalli industriali -3,3% nel 2027."},
       "mercati-metalli-scenari":{title:"Mercati dei metalli: quadro attuale e scenari a 12 mesi per le azioni",
         summary:"Ottobre 2026 segnala forte divergenza: il rame ha toccato 14.508 $/t (record assoluto), stagno e zinco sui massimi, mentre il minerale di ferro resta debole e i preziosi correggono (argento da 92 a 57 $/oz, oro -14% dal picco). Le azioni del settore hanno corretto più dei metalli: il divario tra prezzi e titoli è il tema centrale per gli scenari a 12 mesi. Parte 1 della ricerca sui metalli."},
-      "analisi-allenatori-serie-a":{title:"Analisi prestazioni allenatori — Serie A (Coach Analytics)",
-        summary:"Indice composito «value-adjusted» per valutare stagioni e carriere degli allenatori di Serie A: punti, xG, spettacolo e dominio offensivo/difensivo rapportati al valore della rosa. 870 partite analizzate (agosto 2023 - novembre 2026) su dati FotMob e Transfermarkt, classifiche per stagione e di carriera, il «caso Zanetti» e verifica completa della qualità dei dati."},
+      "analisi-allenatori-serie-a":{title:"Panchine — Quattro stagioni di allenatori di Serie A (Coach Analytics)",
+        summary:"Indice composito «value-adjusted» per valutare le panchine di Serie A: risultati rispetto al valore della rosa (30%), qualità del gioco — occasioni create e concesse (45%) — e dominio dei tiri in porta (25%), zero punti assoluti. 1.250 partite analizzate (2023/24 - 2026/27 a 11 giornate) su dati FotMob, 156 panchine e 41 allenatori in classifica di carriera con il metodo del punto medio su 153 combinazioni di pesi; la classifica dell'anno 2026/27 con commento e l'appendice con dati, formule e strumenti. Edizione novembre 2026."},
+      "criticita-gruppi-russi":{title:"Criticità dei principali gruppi aziendali russi — rischio settoriale e operativo",
+        summary:"Mappatura delle vulnerabilità di sette comparti chiave dell'economia russa — estrattivo, metallurgico, energetico, digitale, finanziario, agroindustriale e manifattura complessa — a partire da cinque fattori sistemici: sanzioni ed esclusione dai mercati occidentali, colli di bottiglia logistici del riorientamento verso Est (saturazione di BAM e Transiberiana, sconti forzati sui prezzi), dipendenza da macchinari, turbine e software occidentali, costo del capitale ai livelli della Bank of Russia con prelievi fiscali straordinari, isolamento SWIFT e volatilità del rublo. Schede di criticità per i principali gruppi — da Gazprom, Rosneft e Lukoil a Sberbank e VTB, da Nornickel a Power Machines — e matrice comparativa di rischio primario, secondario e strutturale per filiera. Nota metodologica: la presenza in elenco non implica negoziabilità degli strumenti per investitori UE."},
       "chi-beneficia-crack-spread":{title:"Oil Radar — Chi beneficia del crack spread e di quanto",
         summary:"Con il crack 3-2-1 Gulf previsto in normalizzazione a ~48 $/bbl di media 2027, nessuna grande raffineria USA mostra ulteriore crescita degli utili: il picco è stato raggiunto nel 2026. Beneficiari residui: chi ha base depressa (Delek, Par Pacific) o guadagnerebbe nell'ottimismo (MPC +22%, PSX +19%, VLO +15%). Sul piano azionario il rischio è asimmetrico al ribasso. Companion del rapporto sulla previsione del crack."},
       "previsione-crack-spread-usa":{title:"Oil Radar — Previsione del crack spread USA",
@@ -523,14 +560,14 @@
   },
   en: {
     docTitle:"⚡ Shocknomics — Economics, geopolitics, markets and sport",
-    metaDesc:"Shocknomics: independent analysis of economics, geopolitics, energy, metals, technology and sport. November 2026 edition — 14 free PDF reports.",
+    metaDesc:"Shocknomics: independent analysis of economics, geopolitics, energy, metals, technology and sport. November 2026 edition — 15 free PDF reports.",
     sub:"Information document: the analyses are for information purposes only and do not constitute personalised financial advice or a solicitation to invest (MiFID II). A new edition every month: all PDFs are always free to download.",
     edition:"EDITION 0 · NOVEMBER 2026",
     tgLabel:"📢 Official Telegram channel", tgSmall:"@shocknomics · «Pillole dal mondo»",
     stReports:"Reports", stPages:"Pages", stArch:"Archive", stFree:"Free forever",
     shareSite:"Share Shocknomics:", copyLink:"🔗 Copy link",
-    chips:{all:"All", energia:"⚡ Energy", metalli:"⛏ Metals & commodities", azionario:"📈 Equities & Tech", sport:"⚽ Sports analytics"},
-    cats:{energia:"Energy", metalli:"Metals & commodities", azionario:"Equities & Tech", sport:"Sports analytics"},
+    chips:{all:"All", energia:"⚡ Energy", metalli:"⛏ Metals & commodities", azionario:"📈 Equities & Tech", sport:"⚽ Sports analytics", geopolitica:"🌍 Geopolitics & risk"},
+    cats:{energia:"Energy", metalli:"Metals & commodities", azionario:"Equities & Tech", sport:"Sports analytics", geopolitica:"Geopolitics & risk"},
     searchPh:"Search the reports…", noresult:"No reports found for this search.",
     download:"⬇ Free download", open:"Open", shareLbl:"Share:", copy:"🔗 Copy", copied:"✓ Copied!",
     metaTpl:"{p} pages · {s} · PDF", emailSubject:"Reports worth reading", via:"— via Shocknomics",
@@ -555,8 +592,10 @@
         summary:"Physical balances of production, use and stocks from ICSG, INSG and ILZSG (Lisbon, October 2026): in 2027 supply recovers everywhere while demand grows at a moderate pace. Surpluses expected for copper (+368 kt), lead, nickel and zinc; a smaller silver deficit and uranium mine output still short of needs. The World Bank sees industrial metals at -3.3% in 2027."},
       "mercati-metalli-scenari":{title:"Metals markets: current picture and 12-month scenarios for the equities",
         summary:"October 2026 shows sharp divergence: copper hit $14,508/t (an all-time record), tin and zinc at highs, while iron ore stays weak and precious metals correct (silver from $92 to $57/oz, gold -14% off its peak). Mining equities have fallen more than the metals themselves: the gap between prices and stocks is the central theme of the 12-month scenarios. Part 1 of the metals research."},
-      "analisi-allenatori-serie-a":{title:"Coaching performance analysis — Serie A (Coach Analytics)",
-        summary:"A «value-adjusted» composite index to rate the seasons and careers of Serie A coaches: points, xG, entertainment and attacking/defensive dominance relative to squad value. 870 matches analysed (August 2023 - November 2026) on FotMob and Transfermarkt data, season-by-season and all-time rankings, the «Zanetti case» and a full check of data quality."},
+      "analisi-allenatori-serie-a":{title:"Panchine — Four seasons of Serie A coaches (Coach Analytics)",
+        summary:"A «value-adjusted» composite index to rate Serie A benches: results relative to squad value (30%), game quality — chances created and conceded (45%) — and shots-on-target dominance (25%), with zero raw points. 1,250 matches analysed (2023/24 - 2026/27 through 11 matchdays) on FotMob data, 156 bench spells and 41 managers in the career ranking via the mid-point method over 153 weight combinations; the 2026/27 season ranking with commentary and an appendix with data, formulas and tools. November 2026 edition."},
+      "criticita-gruppi-russi":{title:"Critical vulnerabilities of major Russian business groups — sectoral and operational risk",
+        summary:"A vulnerability map of seven key sectors of the Russian economy — extractive, metallurgical, energy, digital, financial, agro-industrial and complex manufacturing — built on five systemic factors: sanctions and exclusion from Western markets, the logistics bottlenecks of the eastward pivot (saturated BAM and Trans-Siberian lines, forced price discounts), dependence on Western machinery, turbines and software, the cost of capital at Bank of Russia levels plus windfall taxes, and SWIFT isolation with rouble volatility. Risk profiles of the major groups — from Gazprom, Rosneft and Lukoil to Sberbank and VTB, from Nornickel to Power Machines — and a comparative matrix of primary, secondary and structural risks per sector. Methodological note: listing does not imply the instruments are tradable for EU-based investors."},
       "chi-beneficia-crack-spread":{title:"Oil Radar — who benefits from the crack spread, and by how much",
         summary:"With the 3-2-1 Gulf crack expected to normalise towards an average of ~$48/bbl in 2027, no large US refiner shows further earnings growth: the peak came in 2026. Remaining beneficiaries: those with a depressed base (Delek, Par Pacific) or the optimists' winners (MPC +22%, PSX +19%, VLO +15%). On the equity side the risk is asymmetric to the downside. Companion to the crack-spread forecast report."},
       "previsione-crack-spread-usa":{title:"Oil Radar — US crack spread forecast",
@@ -571,14 +610,14 @@
   },
   zh: {
     docTitle:"⚡ Shocknomics — 经济、地缘政治、市场与体育",
-    metaDesc:"Shocknomics：涵盖经济、地缘政治、能源、金属、科技与体育的独立分析。2026 年 11 月期——14 份免费 PDF 报告。",
+    metaDesc:"Shocknomics：涵盖经济、地缘政治、能源、金属、科技与体育的独立分析。2026 年 11 月期——15 份免费 PDF 报告。",
     sub:"信息性文件：所有分析仅供参考，不构成个性化投资建议或投资要约（MiFID II）。每月推出新一期，所有 PDF 永久免费下载。",
     edition:"第 0 期 · 2026 年 11 月",
     tgLabel:"📢 官方 Telegram 频道", tgSmall:"@shocknomics ·「Pillole dal mondo」",
     stReports:"报告", stPages:"页数", stArch:"档案大小", stFree:"永久免费",
     shareSite:"分享 Shocknomics：", copyLink:"🔗 复制链接",
-    chips:{all:"全部", energia:"⚡ 能源", metalli:"⛏ 金属与大宗商品", azionario:"📈 股票与科技", sport:"⚽ 体育数据"},
-    cats:{energia:"能源", metalli:"金属与大宗商品", azionario:"股票与科技", sport:"体育数据"},
+    chips:{all:"全部", energia:"⚡ 能源", metalli:"⛏ 金属与大宗商品", azionario:"📈 股票与科技", sport:"⚽ 体育数据", geopolitica:"🌍 地缘政治与风险"},
+    cats:{energia:"能源", metalli:"金属与大宗商品", azionario:"股票与科技", sport:"体育数据", geopolitica:"地缘政治与风险"},
     searchPh:"搜索报告…", noresult:"未找到符合条件的报告。",
     download:"⬇ 免费下载", open:"打开", shareLbl:"分享：", copy:"🔗 复制", copied:"✓ 已复制！",
     metaTpl:"{p} 页 · {s} · PDF", emailSubject:"值得一读的报告", via:"— 来自 Shocknomics",
@@ -603,8 +642,10 @@
         summary:"来自 ICSG、INSG、ILZSG（里斯本，2026 年 10 月）的生产、使用与库存实物平衡表：2027 年供应全面恢复，需求温和增长。预计铜（+36.8 万吨）、铅、镍、锌出现过剩；白银赤字收窄，铀矿产量仍不足以满足需求。世界银行预计 2027 年工业金属价格下跌 3.3%。"},
       "mercati-metalli-scenari":{title:"金属市场：现状与矿业股票 12 个月情景",
         summary:"2026 年 10 月呈现明显分化：铜触及 14,508 美元/吨（历史新高），锡、锌处于高位；铁矿石依旧疲软，贵金属回调（白银从 92 美元/盎司回落至 57 美元，黄金较峰值 -14%）。矿业股票跌幅超过金属本身：价格与股票之间的背离是未来 12 个月情景的核心议题。金属研究第一部分。"},
-      "analisi-allenatori-serie-a":{title:"主教练表现分析——意甲（教练数据分析）",
-        summary:"采用「价值调整」综合指数评估意甲教练的赛季与生涯表现：将积分、预期进球 (xG)、观赏性及攻防控制力与球队身价挂钩。基于 FotMob 与 Transfermarkt 数据分析 870 场比赛（2023 年 8 月至 2026 年 11 月），包括赛季与生涯总排名、「扎内蒂案例」以及完整的数据质量核查。"},
+      "analisi-allenatori-serie-a":{title:"《Panchine》——意甲主帅的四个赛季（教练数据分析）",
+        summary:"采用「价值调整」综合指数评估意甲各帅位：战绩相对阵容价值（30%）、比赛质量——创造与让出的机会（45%）——及射正主导权（25%），完全不使用绝对积分。基于 FotMob 数据分析 1,250 场比赛（2023/24 - 2026/27 赛季前 11 轮），156 个执教期，41 位主帅的生涯排名采用 153 种权重组合的中点法；含 2026/27 赛季排名与点评，以及数据、公式与工具附录。2026 年 11 月版。"},
+      "criticita-gruppi-russi":{title:"俄罗斯主要企业集团的脆弱性——行业与运营风险分析",
+        summary:"绘制俄罗斯经济七个关键部门——采矿、冶金、能源、数字、金融、农业工业和复杂制造——的脆弱性地图，基于五大系统性因素：制裁与被排除在西方市场之外、向东转向的物流瓶颈（BAM 与西伯利亚铁路饱和、被迫的价格折让）、对西方机械、涡轮机和软件的依赖、俄罗斯银行高企的资本成本与暴利税，以及 SWIFT 隔离与卢布波动。包含主要集团的风险档案——从 Gazprom、Rosneft 和 Lukoil 到 Sberbank 和 VTB，从 Nornickel 到 Power Machines——以及各部门一级、二级与结构性风险的比较矩阵。方法论说明：列入清单不代表欧盟投资者可交易相关证券。"},
       "chi-beneficia-crack-spread":{title:"石油雷达——谁从裂解价差中获益，获益多少",
         summary:"预计 2027 年墨西哥湾 3-2-1 裂解价差将向约 48 美元/桶的均值回归，美国大型炼厂盈利不再增长：峰值已在 2026 年出现。剩余受益者：基数偏低的（Delek、Par Pacific）或在乐观情景下的赢家（MPC +22%、PSX +19%、VLO +15%）。就股票而言，下行风险呈不对称。本报告为裂解价差预测的姊妹篇。"},
       "previsione-crack-spread-usa":{title:"石油雷达——美国裂解价差预测",
@@ -619,14 +660,14 @@
   },
   hi: {
     docTitle:"⚡ Shocknomics — अर्थव्यवस्था, भू-राजनीति, बाज़ार और खेल",
-    metaDesc:"Shocknomics: अर्थव्यवस्था, भू-राजनीति, ऊर्जा, धातु, प्रौद्योगिकी और खेल पर स्वतंत्र विश्लेषण। नवंबर 2026 अंक — 14 मुफ़्त PDF रिपोर्ट।",
+    metaDesc:"Shocknomics: अर्थव्यवस्था, भू-राजनीति, ऊर्जा, धातु, प्रौद्योगिकी और खेल पर स्वतंत्र विश्लेषण। नवंबर 2026 अंक — 15 मुफ़्त PDF रिपोर्ट।",
     sub:"सूचनात्मक दस्तावेज़: सभी विश्लेषण केवल जानकारी के उद्देश्य से हैं और व्यक्तिगत वित्तीय सलाह या निवेश का आग्रह नहीं हैं (MiFID II)। हर महीने नया अंक: सभी PDF हमेशा मुफ़्त डाउनलोड।",
     edition:"अंक 0 · नवंबर 2026",
     tgLabel:"📢 आधिकारिक टेलीग्राम चैनल", tgSmall:"@shocknomics · «Pillole dal mondo»",
     stReports:"रिपोर्ट", stPages:"पेज", stArch:"संग्रह", stFree:"हमेशा मुफ़्त",
     shareSite:"Shocknomics साझा करें:", copyLink:"🔗 लिंक कॉपी करें",
-    chips:{all:"सभी", energia:"⚡ ऊर्जा", metalli:"⛏ धातु और कमोडिटी", azionario:"📈 इक्विटी और टेक", sport:"⚽ खेल विश्लेषण"},
-    cats:{energia:"ऊर्जा", metalli:"धातु और कमोडिटी", azionario:"इक्विटी और टेक", sport:"खेल विश्लेषण"},
+    chips:{all:"सभी", energia:"⚡ ऊर्जा", metalli:"⛏ धातु और कमोडिटी", azionario:"📈 इक्विटी और टेक", sport:"⚽ खेल विश्लेषण", geopolitica:"🌍 भू-राजनीति और जोखिम"},
+    cats:{energia:"ऊर्जा", metalli:"धातु और कमोडिटी", azionario:"इक्विटी और टेक", sport:"खेल विश्लेषण", geopolitica:"भू-राजनीति और जोखिम"},
     searchPh:"रिपोर्ट खोजें…", noresult:"इस खोज के लिए कोई रिपोर्ट नहीं मिली।",
     download:"⬇ मुफ़्त डाउनलोड", open:"खोलें", shareLbl:"साझा करें:", copy:"🔗 कॉपी", copied:"✓ कॉपी हो गया!",
     metaTpl:"{p} पेज · {s} · PDF", emailSubject:"पढ़ने लायक रिपोर्ट", via:"— Shocknomics के माध्यम से",
@@ -651,8 +692,10 @@
         summary:"ICSG, INSG और ILZSG (लिस्बन, अक्टूबर 2026) से उत्पादन, उपयोग और स्टॉक के भौतिक बहीखाते: 2027 में आपूर्ति हर जगह सुधरती है जबकि मांग संयमित गति से बढ़ती है। तांबा (+368 kt), लेड, निकल और ज़िंक में अधिशेष अपेक्षित; चांदी का घाटा घटा, और यूरेनियम की खनन आपूर्ति अभी भी कम। वर्ल्ड बैंक का अनुमान: 2027 में औद्योगिक धातुएँ -3.3%।"},
       "mercati-metalli-scenari":{title:"धातु बाज़ार: मौजूदा परिदृश्य और शेयरों के लिए 12 महीने के अनुमान",
         summary:"अक्टूबर 2026 में तेज असमानता: तांबा 14,508 डॉलर/टन (सर्वकालिक रिकॉर्ड), टिन और ज़िंक उच्च स्तर पर; लौह अयस्क कमज़ोर, कीमती धातुएँ सुधर रही हैं (चांदी 92 से 57 डॉलर/औंस, सोना चोटी से -14%)। खनन शेयर धातुओं से अधिक गिरे: कीमतों और शेयरों के बीच यह अंतर 12 महीने के परिदृश्यों का केंद्रीय विषय है। धातु शोध का भाग 1।"},
-      "analisi-allenatori-serie-a":{title:"कोचिंग प्रदर्शन विश्लेषण — सेरी आ (कोच एनालिटिक्स)",
-        summary:"सेरी आ के कोचों के सीज़न और करियर को मापने के लिए «वैल्यू-एडजस्टेड» संयुक्त सूचकांक: अंक, xG, मनोरंजन और आक्रामक/रक्षात्मक वर्चस्व को स्क्वाड मूल्य के अनुपात में। FotMob और Transfermarkt डेटा पर 870 मैचों का विश्लेषण (अगस्त 2023 - नवंबर 2026), सीज़न-वार व ऑल-टाइम रैंकिंग, «ज़ानेत्ती मामला» और डेटा गुणवत्ता की पूरी जाँच।"},
+      "analisi-allenatori-serie-a":{title:"पैंचीने — सेरी आ के कोचों के चार सीज़न (कोच एनालिटिक्स)",
+        summary:"सेरी आ की पंचाइनों का «वैल्यू-एडजस्टेड» संयुक्त सूचकांक: स्क्वाड मूल्य के सापेक्ष परिणाम (30%), खेल की गुणवत्ता — बनाए/दिए गए मौके (45%) — और शॉट्स ऑन टारगेट प्रभुत्व (25%), शुद्ध अंकों का उपयोग शून्य। FotMob डेटा पर 1,250 मैचों का विश्लेषण (2023/24 - 2026/27, 11 राउंड), 156 पंचाइन और 41 कोच की करियर रैंकिंग — 153 वेट संयोजनों की मध्य-बिंदु विधि से; 2026/27 सीज़न रैंकिंग और टिप्पणी, तथा डेटा, सूत्र व टूल्स का परिशिष्ट। नवंबर 2026 संस्करण।"},
+      "criticita-gruppi-russi":{title:"रूस के प्रमुख कॉर्पोरेट समूहों की कमज़ोरियाँ — क्षेत्रीय और परिचालन जोखिम विश्लेषण",
+        summary:"रूसी अर्थव्यवस्था के सात प्रमुख क्षेत्रों — खनन, धातुकर्म, ऊर्जा, डिजिटल, वित्त, कृषि-उद्योग और जटिल निर्माण — की कमज़ोरियों का मानचित्र, पाँच प्रणागत कारकों पर आधारित: प्रतिबंध और पश्चिमी बाज़ारों से बहिष्कार, पूर्व की ओर मोड़ की लॉजिस्टिक बाधाएँ (BAM और ट्रांस-साइबेरियन की संतृप्ति, बलात् मूल्य-छूट), पश्चिमी मशीनरी, टरबाइन और सॉफ़्टवेयर पर निर्भरता, बैंक ऑफ़ रूस के स्तर पर पूंजी की लागत और विंडफ़ॉल टैक्स, तथा SWIFT अलगाव और रूबल की अस्थिरता। प्रमुख समूहों की जोखिम प्रोफ़ाइल — Gazprom, Rosneft और Lukoil से Sberbank और VTB तक, Nornickel से Power Machines तक — और प्रत्येक क्षेत्र के प्राथमिक, द्वितीयक व संरचनात्मक जोखिमों की तुलनात्मक मैट्रिक्स सहित। पद्धति टिप्पणी: सूची में होना EU निवेशकों के लिए प्रतिभूतियों की व्यापारिकता का अर्थ नहीं देता।"},
       "chi-beneficia-crack-spread":{title:"ऑयल राडार — क्रैक स्प्रेड से किसे फ़ायदा, और कितना",
         summary:"2027 में 3-2-1 गल्फ क्रैक के औसतन ~48 डॉलर/बैरल पर सामान्य होने के अनुमान के साथ, किसी बड़ी अमेरिकी रिफाइनरी में आगे आय-वृद्धि नहीं दिखती: चरम 2026 में आ चुका है। शेष लाभार्थी: निम्न आधार वाले (डेलेक, पार पैसिफ़िक) या आशावादी परिदृश्य के विजेता (MPC +22%, PSX +19%, VLO +15%)। शेयरों पर जोखिम गिरावट की ओर असममित है। क्रैक-स्प्रेड पूर्वानुमान रिपोर्ट का साथी दस्तावेज़।"},
       "previsione-crack-spread-usa":{title:"ऑयल राडार — अमेरिकी क्रैक स्प्रेड पूर्वानुमान",
@@ -688,6 +731,7 @@
     set("h-sharesite", D.shareSite); set("h-copy", D.copyLink);
     set("chip-all", D.chips.all); set("chip-energia", D.chips.energia); set("chip-metalli", D.chips.metalli);
     set("chip-azionario", D.chips.azionario); set("chip-sport", D.chips.sport);
+    set("chip-geopolitica", D.chips.geopolitica);
     var q = document.getElementById("q"); if(q) q.placeholder = D.searchPh;
     set("noresult", D.noresult);
     set("f-head", D.fHead); set("f-tg", D.fTg); set("f-tgtag", D.fTgTag);
